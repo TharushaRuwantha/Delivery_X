@@ -103,29 +103,56 @@ class _HomeState extends State<Home> {
                     ),
                   ),
                 ),
-                Material(
-                  elevation: 5.0,
-                  borderRadius: BorderRadius.circular(10),
-                  child: Container(
-                    padding: EdgeInsets.all(10),
-                    child: Image.asset(
-                      "images/burger.png",
-                      height: 50.0,
-                      width: 50.0,
-                      fit: BoxFit.cover,
+                GestureDetector(
+                  onTap: () => {
+                    burgur = true,
+                    pizza = false,
+                    ice_cream = false,
+                    salad = false,
+                    setState(() {})
+                  },
+                  child: Material(
+                    elevation: 5.0,
+                    borderRadius: BorderRadius.circular(10),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: burgur ? Colors.black : Colors.white,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      padding: EdgeInsets.all(10),
+                      child: Image.asset(
+                        "images/burger.png",
+                        color: burgur ? Colors.white : Colors.black,
+                        height: 50.0,
+                        width: 50.0,
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                 ),
-                Material(
-                  elevation: 5.0,
-                  borderRadius: BorderRadius.circular(10),
-                  child: Container(
-                    padding: EdgeInsets.all(10),
-                    child: Image.asset(
-                      "images/ice-cream.png",
-                      height: 50.0,
-                      width: 50.0,
-                      fit: BoxFit.cover,
+                GestureDetector(
+                  onTap: () => {
+                    ice_cream = true,
+                    pizza = false,
+                    salad = false,
+                    burgur = false,
+                    setState(() {})
+                  },
+                  child: Material(
+                    elevation: 5.0,
+                    borderRadius: BorderRadius.circular(10),
+                    child: Container(
+                      decoration: BoxDecoration(
+                          color: ice_cream ? Colors.black : Colors.white,
+                          borderRadius: BorderRadius.circular(10)),
+                      padding: EdgeInsets.all(10),
+                      child: Image.asset(
+                        "images/ice-cream.png",
+                        color: ice_cream ? Colors.white : Colors.black,
+                        height: 50.0,
+                        width: 50.0,
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                 )
